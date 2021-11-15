@@ -15,7 +15,6 @@
         <div class="ui wechat-qr flowing popup transition hidden">
           <img src="https://r.photo.store.qq.com/psc?/V53KcXfb1umonn4HbITu3rINxs43TczD/45NBuzDIW489QBoVep5mcaapv*CZPLor9HYeVrOOiVLnyRm8OUpwb6xeJ6lITPL.CQBAMN*ufWnqF4BJBqO4o0iDboC.V.GwA1i2AehYs7g!/r" alt="" class="ui rounded image" style="width: 110px">
         </div>
-        <!-- 向下滚动 -->
         <!--
         <div class="scroll-down" @click="scrollDown">
           <h4>向下滚动<i class="el-icon-arrow-down"></i></h4>
