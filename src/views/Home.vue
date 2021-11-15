@@ -10,19 +10,11 @@
         <div class="blog-contact animated zoomIn">
           <a class="github circular icon button" data-content="https://github.com/bingxindan" data-position="bottom center" style="margin-right: 50px"><i class="github icon"></i></a>
           <a class="wechat circular icon button" style="margin-right: 50px"><i class="weixin icon"></i></a>
-          <!--<a class="qq circular icon button" data-content="1626680964" data-position="bottom center"><i class="qq icon"></i></a>-->
         </div>
         <div class="ui wechat-qr flowing popup transition hidden">
           <img src="https://r.photo.store.qq.com/psc?/V53KcXfb1umonn4HbITu3rINxs43TczD/45NBuzDIW489QBoVep5mcaapv*CZPLor9HYeVrOOiVLnyRm8OUpwb6xeJ6lITPL.CQBAMN*ufWnqF4BJBqO4o0iDboC.V.GwA1i2AehYs7g!/r" alt="" class="ui rounded image" style="width: 110px">
         </div>
-        <!-- 向下滚动 -->
-        <!--
-        <div class="scroll-down" @click="scrollDown">
-          <h4>向下滚动<i class="el-icon-arrow-down"></i></h4>
-        </div>
-        -->
       </div>
-      <!--中间内容,如果太窄了可放到container    <div  class="m-container m-padded-tb-big">-->
     </div>
     <div  class="m-home">
       <div class="ui container">
@@ -100,10 +92,9 @@
           </div>
 
           <!--右边的top-->
-          <!--<div class="five wide column" style="left: 34px !important;">-->
+          <div class="five wide column" style="left: 34px !important;">
 
             <!--分类-->
-            <!--
             <div class="ui segments my-shadow">
               <div class="ui secondary segment">
                 <div class="ui two column grid">
@@ -126,42 +117,6 @@
                 </div>
               </div>
             </div>
-            -->
-
-            <!--标签-->
-            <!--
-            <div class="ui segments m-margin-top-large my-shadow">
-              <div class="ui secondary segment">
-                <div class="ui two column grid">
-                  <div class="column">
-                    <i class="tags icon"></i>标签
-                  </div>
-                  <div class="right aligned column">
-                    <a href="/#/tags" target="_blank">more <i class="angle double right icon"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="ui my-blue segment">
-                <template v-for="(item, index) in tagList">
-                  <a target="_blank" class="ui my-blue basic left pointing label m-margin-tb-tiny" v-if='index<15' :key="item.tagId" @click="toTag(item.tagId)">
-                    {{item.tagName}} <div class="detail">{{item.tagCount}}</div>
-                  </a>
-                </template>
-              </div>
-            </div>
-            -->
-
-            <!--最新推荐-->
-            <!--
-            <div class="ui segments m-margin-top-large my-shadow">
-              <div class="ui secondary segment ">
-                <i class="bookmark icon"></i>最新推荐
-              </div>
-              <div class="ui segment" v-for="item in latestList" :key="item.blogId">
-                <a  target="_blank" class="m-black m-text-thin" style="cursor:pointer;" v-text="item.title" @click="toBlog(item.blogId)"></a>
-              </div>
-            </div>
-            -->
 
             <!--二维码-->
             <!--
@@ -169,18 +124,15 @@
             <div class="ui centered card my-shadow" style="width: 11em">
               <img src="https://r.photo.store.qq.com/psc?/V53KcXfb1umonn4HbITu3rINxs43TczD/45NBuzDIW489QBoVep5mcaapv*CZPLor9HYeVrOOiVLnyRm8OUpwb6xeJ6lITPL.CQBAMN*ufWnqF4BJBqO4o0iDboC.V.GwA1i2AehYs7g!/r" alt="" class="ui rounded image" >
             </div>
-            
+            -->
           </div>
-          -->
-
+          
         </div>
       </div>
     </div>
     <br>
     <br>
     <Footer></Footer>
-<!--    &lt;!&ndash; 主体组件 &ndash;&gt;-->
-<!--    <index style="width: 100%"></index>-->
   </div>
 
 </template>
@@ -225,11 +177,6 @@ export default {
     }
   },
   created () {
-    this.message()
-    this.getUser()
-    this.findPage()
-    this.getTypeList()
-    this.getTagList()
     this.getLatestList()
     this.reload()
   },
@@ -241,24 +188,6 @@ export default {
         window.location.reload()
         window.sessionStorage.removeItem('reload')
       }
-    },
-    message () {
-      const messageFlag = sessionStorage.getItem('messageFlag')
-      if (messageFlag == null) {
-        Notification({
-          title: '消息',
-          message: '在本站中各位可以创建用户发布博客、评论、留言等进行测试，但是没有实际意义的博客会被站主删除，望各位知悉',
-          duration: 0
-        })
-        const h = this.$createElement
-        Notification({
-          title: '通知',
-          message: h('i', { style: 'color: teal' }, '此次更新了一个新模块：聊天室模块，并且已经支持上传图片等功能；后花园也有新功能，测试还不完善可能还有bug。' +
-            '有关ElasticSearch服务的2核4G服务器过期了（由于贫穷），搜索功能暂时无法使用，敬请谅解！'),
-          duration: 0
-        })
-      }
-      sessionStorage.setItem('messageFlag', 'true')
     },
     // 初始化
     scrollDown () {
